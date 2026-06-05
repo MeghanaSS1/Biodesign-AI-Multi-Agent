@@ -1,0 +1,43 @@
+# ─────────────────────────────────────────────────────────────────
+# Biodesign AI Roundtable — 環境設定範例
+# 複製此檔案並重新命名為 .env，填入你自己的金鑰
+# Copy this file to .env and fill in your own keys
+# ─────────────────────────────────────────────────────────────────
+
+# ── LLM Provider ─────────────────────────────────────────────────
+# 選擇要使用的模型後端，四選一：
+# Choose one backend: GEMINI | OLLAMA | OLLAMA_CLOUD | OMLX
+LLM_PROVIDER=OLLAMA
+
+# ── Google Gemini (Cloud) ─────────────────────────────────────────
+# 從 https://aistudio.google.com/apikey 取得免費 API key
+GOOGLE_API_KEY=your-google-api-key-here
+GEMINI_API_KEY=your-google-api-key-here
+
+# ── OpenAI (or oMLX local) ───────────────────────────────────────
+OPENAI_API_KEY=your-openai-api-key-here
+
+# ── Local Ollama ─────────────────────────────────────────────────
+# 確認已安裝 Ollama 並 pull 好模型：ollama pull qwen2.5:7b
+OLLAMA_MODEL=qwen2.5:7b
+OLLAMA_URL=http://localhost:11434/v1
+
+# ── Ollama Cloud ─────────────────────────────────────────────────
+OLLAMA_API_KEY=your-ollama-cloud-key-here
+OLLAMA_CLOUD_MODEL=gemma4:31b-cloud
+OLLAMA_CLOUD_URL=https://ollama.com/v1
+
+# ── oMLX (Apple Silicon 本地推論) ────────────────────────────────
+OMLX_MODEL=Qwen3.5-9B-MLX-4bit
+OMLX_URL=http://127.0.0.1:8989/v1
+OMLX_API_KEY=your-omlx-key-or-leave-blank
+
+# ── Evidence Grounding (選填) ────────────────────────────────────
+# 開啟後會對 PubMed 與 openFDA 發送查詢請求
+ENABLE_EVIDENCE_GROUNDING=0
+EVIDENCE_MAX_QUERIES=12
+# NCBI PubMed API（有 key 可提高 rate limit，無 key 也能用）
+NCBI_EMAIL=your-email@example.com
+NCBI_API_KEY=your-ncbi-api-key-here
+# TFDA Open Data（選填）
+TFDA_OPEN_DATA_URL=
